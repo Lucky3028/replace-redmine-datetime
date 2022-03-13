@@ -15,37 +15,19 @@
 (function () {
     'use strict';
 
-    const dateTimes = [
-        {
-            ja: '追加',
-            position: 1,
-        },
-        {
-            ja: '更新',
-            position: 2,
-        },
-    ];
-
-    // チケットの作成・更新を表示するPタグ
-    const authorsPTag = document.querySelector('p.author');
-    if (!(authorsPTag instanceof HTMLParagraphElement))
-        throw new Error('Cannot find author paragraph!');
-    // 作成者のテキストとリンクを生成
-    const author = authorsPTag.children[0];
-    if (!(author instanceof HTMLAnchorElement))
-        throw new Error('Cannnot find author anchor!');
-    const authorInfo = [author, ' さんが'];
-    // 作成・更新日時をテキスト化
-    // 更新日時はnullable
-    const dateTimeSentences = dateTimes.map((dt) => {
+    const nonNullable = (value) => value != null;
+    const replaceDateTime = (element) => {
         var _a;
-        const dateTimeTag = authorsPTag.children[dt.position];
-        if (!(dateTimeTag instanceof HTMLAnchorElement))
-            return '';
-        const dateTime = dateTimeTag.title;
-        const readableDateTime = (_a = dateTimeTag.textContent) !== null && _a !== void 0 ? _a : '';
-        return ` [${dateTime}] ${readableDateTime}前に${dt.ja}`;
-    });
-    authorsPTag.replaceChildren(...authorInfo, ...dateTimeSentences);
+        const dateTime = element.title;
+        const readableDateTime = (_a = element.textContent) !== null && _a !== void 0 ? _a : '';
+        element.replaceWith(` [${dateTime}] ${readableDateTime}`);
+    };
+    const createdDateTimePosition = 2;
+    const lastUpdatedDateTimePosition = 3;
+    const updatesAnchors = [createdDateTimePosition, lastUpdatedDateTimePosition]
+        .map((position) => document.querySelector(`p.author > a:nth-child(${position})`))
+        .filter(nonNullable);
+    const noteAnchors = document.querySelectorAll('h4.note-header > a:nth-child(3)');
+    [...updatesAnchors, ...noteAnchors].forEach(replaceDateTime);
 
 })();
