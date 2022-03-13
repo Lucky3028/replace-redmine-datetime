@@ -14,4 +14,4 @@ Generate a production build
 
 ## License
 
-MIT
+[MIT](./LICENSE)
