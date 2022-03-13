@@ -13,17 +13,33 @@
   },
   "homepage": "https://github.com/Lucky3028/replace-redmine-datetime",
   "packageManager": "yarn@3.2.0",
-  "typeRoots": ["types"],
+  "typeRoots": [
+    "types"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit; eslint 'src/**/*.ts'; prettier -c 'src/**/*.ts'",
+    "lint:fix": "tsc --noEmit; eslint --fix 'src/**/*.ts'; prettier -w 'src/**/*.ts'",
+    "bundle": "rollup -c",
+    "bundle:dev": "touch dev.ts; rollup -c rollup.config.dev.js; rm dev.ts"
+  },
   "devDependencies": {
     "@rollup/plugin-html": "^0.2.4",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
+    "@types/eslint": "^8.4.1",
+    "@types/prettier": "^2.4.4",
+    "@types/tampermonkey": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
     "prettier": "^2.5.1",
     "rollup": "^2.70.0",
-    "typescript": "^4.6.2"
-  },
-  "dependencies": {
-    "tslib": "^2.3.1"
+    "tsc": "^2.0.4",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2",
+    "typesync": "^0.8.0"
   }
 }
