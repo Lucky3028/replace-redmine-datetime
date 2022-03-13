@@ -9,7 +9,6 @@ const replaceDateTime = (element: HTMLAnchorElement) => {
 
 const createdDateTimePosition = 2;
 const lastUpdatedDateTimePosition = 3;
-
 const updatesAnchors = [createdDateTimePosition, lastUpdatedDateTimePosition]
   .map((position) =>
     document.querySelector<HTMLAnchorElement>(
@@ -18,8 +17,9 @@ const updatesAnchors = [createdDateTimePosition, lastUpdatedDateTimePosition]
   )
   .filter(nonNullable);
 
+const noteUpdatedDateTimePosition = 3;
 const noteAnchors = document.querySelectorAll<HTMLAnchorElement>(
-  'h4.note-header > a:nth-child(3)',
+  `h4.note-header > a:nth-child(${noteUpdatedDateTimePosition})`,
 );
 
 [...updatesAnchors, ...noteAnchors].forEach(replaceDateTime);
