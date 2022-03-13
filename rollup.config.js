@@ -2,6 +2,8 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import packageJson from './package.json';
 
+const scriptUrl =
+  'https://raw.githubusercontent.com/Lucky3028/replace-redmine-datetime/gh-pages/main.js';
 const userScriptBanner = `
 // ==UserScript==
 // @name        ${packageJson.name}
@@ -14,6 +16,8 @@ const userScriptBanner = `
 // @run-at      document-end
 // @include     *://redmine.*.*/issues/*
 // @include     *://.*redmine.*/issues/*
+// @updateURL   ${scriptUrl}
+// @downloadURL ${scriptUrl}
 // ==/UserScript==
 `.trim();
 
