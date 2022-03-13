@@ -2,11 +2,13 @@ import dateTimes from './dateTime';
 
 // チケットの作成・更新を表示するPタグ
 const authorsPTag = document.querySelector('p.author');
-if (!(authorsPTag instanceof HTMLParagraphElement)) throw new Error();
+if (!(authorsPTag instanceof HTMLParagraphElement))
+  throw new Error('Cannot find author paragraph!');
 
 // 作成者のテキストとリンクを生成
 const author = authorsPTag.children[0];
-if (!(author instanceof HTMLAnchorElement)) throw new Error();
+if (!(author instanceof HTMLAnchorElement))
+  throw new Error('Cannnot find author anchor!');
 const authorInfo = [author, ' さんが'];
 
 // 作成・更新日時をテキスト化
