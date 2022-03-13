@@ -13,7 +13,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: yarn -v
       - name: Run linter
         run: yarn lint
       - name: Run compile by Rollup
