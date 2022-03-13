@@ -27,7 +27,8 @@
     const updatesAnchors = [createdDateTimePosition, lastUpdatedDateTimePosition]
         .map((position) => document.querySelector(`p.author > a:nth-child(${position})`))
         .filter(nonNullable);
-    const noteAnchors = document.querySelectorAll('h4.note-header > a:nth-child(3)');
+    const noteUpdatedDateTimePosition = 3;
+    const noteAnchors = document.querySelectorAll(`h4.note-header > a:nth-child(${noteUpdatedDateTimePosition})`);
     [...updatesAnchors, ...noteAnchors].forEach(replaceDateTime);
 
 })();
