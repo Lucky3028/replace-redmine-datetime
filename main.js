@@ -9,8 +9,8 @@
 // @run-at      document-end
 // @include     *://redmine.*.*/issues/*
 // @include     *://.*redmine.*/issues/*
-// @updateURL   https://raw.githubusercontent.com/Lucky3028/replace-redmine-datetime/gh-pages/main.js
-// @downloadURL https://raw.githubusercontent.com/Lucky3028/replace-redmine-datetime/gh-pages/main.js
+// @updateURL   https://lucky3028.github.io/replace-redmine-datetime/main.js
+// @downloadURL https://lucky3028.github.io/replace-redmine-datetime/main.js
 // ==/UserScript==
 (function () {
     'use strict';
