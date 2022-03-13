@@ -4,7 +4,7 @@ import dateTimes from './dateTime';
 const authorsPTag = document.querySelector('p.author');
 if (!(authorsPTag instanceof HTMLParagraphElement)) throw new Error();
 
-// 作成者
+// 作成者のテキストとリンクを生成
 const author = authorsPTag.children[0];
 if (!(author instanceof HTMLAnchorElement)) throw new Error();
 const authorInfo = [author, ' さんが'];
