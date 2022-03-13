@@ -6,9 +6,9 @@ Chrome及びChromeをもとにしたブラウザでRedmineの各チケットを�
 
 ## Development
 
-1. `yarn bundle:dev`
+1. `yarn bundle:dev`  
 Generate a dummy script for development
-1. `yarn bundle`
+1. `yarn bundle`  
 Generate a production build
 1. Add `./dist/dev.js` to Tampermonkey.
 
