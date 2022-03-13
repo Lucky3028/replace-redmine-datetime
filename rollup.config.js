@@ -8,7 +8,7 @@ const userScriptBanner = `
 // ==UserScript==
 // @name        ${packageJson.name}
 // @namespace   https://celesteria.net
-// @version     0.1.1
+// @version     ${packageJson.version}
 // @description ${packageJson.description}
 // @author      ${packageJson.author}
 // @license     ${packageJson.license}

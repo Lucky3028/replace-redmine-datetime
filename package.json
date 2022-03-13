@@ -1,6 +1,6 @@
 {
   "name": "replace-redmine-datetime",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Replace DateTime link with text on a Redmine issue page.",
   "author": "Lucky3028",
   "license": "MIT",
