@@ -17,8 +17,8 @@ const userScriptBanner = `
 // @supportURL  ${packageJson.bugs.url}
 // @run-at      document-end
 // @require     file://${__dirname}/dist/main.js
-// @include     *://redmine.*.*/*
-// @include     *://.*redmine.*/*
+// @include     *://redmine.*.*/issues/*
+// @include     *://.*redmine.*/issues/*
 // ==/UserScript==
 `.trim();
 

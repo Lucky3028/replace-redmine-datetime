@@ -12,8 +12,8 @@ const userScriptBanner = `
 // @license     ${packageJson.license}
 // @supportURL  ${packageJson.bugs.url}
 // @run-at      document-end
-// @include     *://redmine.*.*/*
-// @include     *://.*redmine.*/*
+// @include     *://redmine.*.*/issues/*
+// @include     *://.*redmine.*/issues/*
 // ==/UserScript==
 `.trim();
 
