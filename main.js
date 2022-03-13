@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        replace-redmine-datetime
 // @namespace   https://celesteria.net
-// @version     0.1.1
+// @version     0.2.0
 // @description Replace DateTime link with text on a Redmine issue page.
 // @author      Lucky3028
 // @license     MIT
