@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: '16'
       - name: Run linter
-        run: yarn Lint
+        run: yarn lint
       - name: Run compile by Rollup
         run: yarn bundle
