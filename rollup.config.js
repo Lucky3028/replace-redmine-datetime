@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import packageJson from './package.json';
 
 const scriptUrl =
-  'https://raw.githubusercontent.com/Lucky3028/replace-redmine-datetime/gh-pages/main.js';
+  'https://lucky3028.github.io/replace-redmine-datetime/main.js';
 const userScriptBanner = `
 // ==UserScript==
 // @name        ${packageJson.name}
