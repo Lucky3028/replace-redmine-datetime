@@ -1,26 +1,25 @@
-import dateTimes from './dateTime';
+const nonNullable = <T>(value: T): value is NonNullable<T> => value != null;
 
-// チケットの作成・更新を表示するPタグ
-const authorsPTag = document.querySelector('p.author');
-if (!(authorsPTag instanceof HTMLParagraphElement))
-  throw new Error('Cannot find author paragraph!');
+const replaceDateTime = (element: HTMLAnchorElement) => {
+  const dateTime = element.title;
+  const readableDateTime = element.textContent ?? '';
 
-// 作成者のテキストとリンクを生成
-const author = authorsPTag.children[0];
-if (!(author instanceof HTMLAnchorElement))
-  throw new Error('Cannnot find author anchor!');
-const authorInfo = [author, ' さんが'];
+  element.replaceWith(` [${dateTime}] ${readableDateTime}`);
+};
 
-// 作成・更新日時をテキスト化
-// 更新日時はnullable
-const dateTimeSentences = dateTimes.map((dt) => {
-  const dateTimeTag = authorsPTag.children[dt.position];
-  if (!(dateTimeTag instanceof HTMLAnchorElement)) return '';
+const createdDateTimePosition = 2;
+const lastUpdatedDateTimePosition = 3;
 
-  const dateTime = dateTimeTag.title;
-  const readableDateTime = dateTimeTag.textContent ?? '';
+const updatesAnchors = [createdDateTimePosition, lastUpdatedDateTimePosition]
+  .map((position) =>
+    document.querySelector<HTMLAnchorElement>(
+      `p.author > a:nth-child(${position})`,
+    ),
+  )
+  .filter(nonNullable);
 
-  return ` [${dateTime}] ${readableDateTime}前に${dt.ja}`;
-});
+const noteAnchors = document.querySelectorAll<HTMLAnchorElement>(
+  'h4.note-header > a:nth-child(3)',
+);
 
-authorsPTag.replaceChildren(...authorInfo, ...dateTimeSentences);
+[...updatesAnchors, ...noteAnchors].forEach(replaceDateTime);
