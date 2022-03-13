@@ -6,7 +6,7 @@ Chrome及びChromeをもとにしたブラウザでRedmineの各チケットを�
 
 ## Usage
 
-Add the link below to Tampermonkey.
+Add the link below to Tampermonkey.  
 <https://lucky3028.github.io/replace-redmine-datetime/main.js>
 
 ## Development
